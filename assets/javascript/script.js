@@ -1,85 +1,54 @@
 $(document).ready(function() {
-        console.log("ready!");
-        
-var queryURL = "https://data.cityofnewyork.us/resource/9w7m-hzhe.json"
+    console.log("ready!");
 
-$.ajax({
-        url: queryURL,
-        method: "GET"
-      })
-      // We store all of the retrieved data inside of an object called "response"
-      .done(function(response) {
+    var queryURL = "https://data.cityofnewyork.us/resource/9w7m-hzhe.json"
 
-        // Log the queryURL
-        console.log(queryURL);
+    $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+        // We store all of the retrieved data inside of an object called "response"
+        .done(function(response) {
 
-        // Log the Object
-        console.log(response);
-        //log all of the data in the API then parse from here
-        
+            // Log the queryURL
+            console.log(queryURL);
 
-        // For loop set max to 10 objects and index 10 assign attributed
+            // Log the Object
+            console.log(response);
+            //log all of the data in the API then parse from here
+
+
+            // For loop set max to 10 objects and index 10 assign attributed
             for (var i = 0; i < response.length; i++) {
-            	response[i]
-          		
-          		var restName = response[i].dba;
-        		console.log(restName);
+                response[i]
 
-    			var building = response[i].building;
-        		console.log(building);
+                var restName = response[i].dba;
+                console.log("Restaraunt Name: ", restName);
 
-        		var zipcode = response[i].zipcode;
-        		console.log(zipcode);
+                var building = response[i].building;
+                console.log("Address number: ", building);
 
-        		var boro = response[i].boro;
-                console.log(boro);
+                var zipcode = response[i].zipcode;
+                console.log("Zipcode: ", zipcode);
 
-        		var cuisineDescription = response[i].cuisine_description;
-        		console.log(cuisineDescription);
+                var boro = response[i].boro;
+                console.log("City Boro: ", boro);
 
-        		var violationDescription = response[i].violation_description;
-        		console.log(violationDescription);
+                var cuisineDescription = response[i].cuisine_description;
+                console.log("Type of Food: ", cuisineDescription);
 
-        		
-                
-
-              };
+                var violationDescription = response[i].violation_description;
+                console.log("Violation Description: ", violationDescription);
 
 
-            //   //create a new dynamic div
-            //     var elRestName = $("<div>");
-            //     console.log(div);
-            //     var elBuilding = $("<div>");
-            //     console.log(div);
-            //     var elZipcode = $("<div>");
-            //     console.log(div);
-            //     var elBoro = $("<div>");
-            //     console.log(div);
+                // full list of items to the well and adding it appending to the DOM via JQuery
+                $(".table tbody").append("<tr><td id='restaurant-name-display'> " + restName +
+                    "</td><td id='address-display'>" + (building + " " + zipcode + " " + boro) +
+                    "</td><td id='cusine-type-display'>" + cuisineDescription +
+                    "</td><td id='violation-display'>" + violationDescription);
 
-             
-            //     // Creating a paragraph tag with the result item's rating
-            // var p = $("<p>").text("Cusine: " + results[i].cuisineDescription);
-            // var p = $("<p>").text("Grade: " + results[i].grade);
-            // var p = $("<p>").text("Violation: " + results[i].violationDescription);
-           
-            });
+
+            };
+
+        });
 }); //!!!!!!!!!!!!!!!!!!!!END OF!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! $(document).ready(function()
-
-// $("button").on("click", function() {
-//       // Grabbing and storing the data-animal property value from the button
-//       var anything = $(this).attr("data-animal");
-
-        
-        // Global Variables
-//#############################################
-       
-        // Buttons Variables
-//##########################################################
-       //FUNCTIONS
-//##########################################    
-    // create function to render buttons to the page
-   
-//##########################################
-    
-
-
