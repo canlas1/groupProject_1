@@ -28,6 +28,9 @@ $(document).ready(function() {
                 var building = response[i].building;
                 console.log("Address number: ", building);
 
+                var street = response[i].street;
+                console.log("Street Name: ", street)
+
                 var zipcode = response[i].zipcode;
                 console.log("Zipcode: ", zipcode);
 
@@ -37,15 +40,28 @@ $(document).ready(function() {
                 var cuisineDescription = response[i].cuisine_description;
                 console.log("Type of Food: ", cuisineDescription);
 
+                var grade = response[i].grade;
+                console.log("Grade: ", grade);
+
+                var inspectionDate = response[i].inspection_date;
+                console.log("Inpection_date: ", inspectionDate);
+
+                var inspectionType = response[i].inspection_type;
+                console.log("Inpection_type: ", inspectionType);
+
                 var violationDescription = response[i].violation_description;
                 console.log("Violation Description: ", violationDescription);
 
+                
 
                 // full list of items to the well and adding it appending to the DOM via JQuery
-                $(".table tbody").append("<tr><td id='restaurant-name-display'> " + restName +
-                    "</td><td id='address-display'>" + (building + " " + zipcode + " " + boro) +
-                    "</td><td id='cusine-type-display'>" + cuisineDescription +
-                    "</td><td id='violation-display'>" + violationDescription);
+                 $(".table tbody").append("<tr><td id='restaurant-name-display'> " + restName +
+                     "</td><td id='address-display'>" + (building + " " + street + zipcode + " " + boro) +
+                     "</td><td id='cusine-type-display'>" + cuisineDescription + 
+                     "</td><td id='grade-display'>" + grade + 
+                     "</td><td id ='inspection-date-display'>" + inspectionDate +
+                     "</td><td id = 'inspection-type-display'>" +inspectionType +
+                     "</td><td id='violation-display'>" + violationDescription);
 
 
             };

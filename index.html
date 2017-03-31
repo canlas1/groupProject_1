@@ -17,57 +17,65 @@
 
 <body>
     <div class="container">
-    <div class="row">
-        <div class="jumbotron">
-            <h1>Safe Eats!</h1>
-            <h2>Check Before You Chow</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Current Restaraunt Info</h3>
-            </div>
-            <div class="panel-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Restaurant Name</th>
-                            <th>Address</th>
-                            <th>Zipcode</th>
-                            <th>Type of Food</th>
-                            <th>Violation Comment</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td id="restaurant-name-display"></td>
-                            <td id="address-display"></td>
-                            <td id="zipcode-display"></td>
-                            <td id="cusine-type-display"></td>
-                            <td id="violation-display"></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="jumbotron">
+                    <h1>Safe Eats!</h1>
+                    <h2>Check Before You Chow</h2>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Type Restaurant</h3>
-            </div>
-            <div class="panel-body">
-                <form>
-                    <div class="form-group">
-                        <label for="restaurant-input">Restaurant Name:</label>
-                        <input type="text" class="form-control" id="train-name-input">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Current Restaraunt Info</h3>
                     </div>
-                    <input type="submit" class="btn" value="Submit Button" id="submitForm">
-                </form>
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Restaurant Name</th>
+                                    <th>Address</th>
+                                    <th>Type of Food</th>
+                                    <th>Inpection Grade</th>
+                                    <th>Inpection Date</th>
+                                    <th>Inspection Type</th>
+                                    <th>Violation Comment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="restaurant-name-display"></td>
+                                    <td id="address-display"></td>
+                                    <td id="cusine-type-display"></td>
+                                    <td id="grade-display"></td>
+                                    <td id="inspection-type-display"></td>
+                                    <td id="inspection-date-display"></td>
+                                    <td id="violation-display"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Type Restaurant</h3>
+                </div>
+                <div class="panel-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="restaurant-input">Restaurant Name:</label>
+                            <input type="text" class="form-control" id="train-name-input">
+                        </div>
+                        <input type="submit" class="btn" value="Submit Button" id="submitForm">
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="assets/javascript/script.js"></script>
     <!-- Latest compiled and minified JavaScript -->
