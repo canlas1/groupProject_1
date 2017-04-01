@@ -55,13 +55,13 @@ $(document).ready(function() {
                 
 
                 // full list of items to the well and adding it appending to the DOM via JQuery
-                 $(".table tbody").append("<tr><td id='restaurant-name-display'> " + restName +
-                     "</td><td id='address-display'>" + (building + " " + street + zipcode + " " + boro) +
-                     "</td><td id='cusine-type-display'>" + cuisineDescription + 
-                     "</td><td id='grade-display'>" + grade + 
-                     "</td><td id ='inspection-date-display'>" + inspectionDate +
-                     "</td><td id = 'inspection-type-display'>" +inspectionType +
-                     "</td><td id='violation-display'>" + violationDescription);
+                 $(".table tbody").append("<tr><td class='restaurant-name-display'> " + restName +
+                     "</td><td class='address-display'>" + (building + " " + street + zipcode + " " + boro) +
+                     "</td><td class='cusine-type-display'>" + cuisineDescription + 
+                     "</td><td class='grade-display'>" + grade + 
+                     "</td><td class='inspection-date-display'>" + inspectionDate +
+                     "</td><td class= 'inspection-type-display'>" +inspectionType +
+                     "</td><td class='violation-display'>" + violationDescription);
 
 
             };
