@@ -3,82 +3,56 @@ var config = {
     authUrl: 'https://foursquare.com/',
     apiUrl: 'https://api.foursquare.com/'
 };
-//changed Elsa's id dba to submitForm
 $("#submitForm").on("click", function(event) {
+
     event.preventDefault();
 
-    var searchTerm = $("#submitForm").val().trim();
-    console.log(searchTerm);
+    var searchTerm = $("#dba-input").val().trim();
+    console.log("this is our search: " + searchTerm);
 
     var queryURL = "https://api.foursquare.com/v2/venues/explore?query=" + searchTerm + "&near=New+York&oauth_token=PDNKBXL444BMITOCS54NRFEJC35MCGQB5CZROL1EZHTT5JKM&v=20170401";
-    console.log("this is the query URL: " + queryURL);
+
+
+
     $.ajax({
             url: queryURL,
             method: "GET"
         })
         // After the data comes back from the API
         .done(function(response) {
+            // Log the query URL
+            console.log("this is the query URL: " + queryURL);
             // Log the Object
             console.log(response);
+            //this unreadCount gave us the 51 number.. we had an array of notifications and one objects
+            // item that contained unread Count
+            var unreadCount = response.notifications[0].item.unreadCount;
+            // we store the path to items in a variable, to avoid having to write a big line of code in
+            //the for loop function and results(items the array that contains the venue parameter)
+            //(the venue parameter contains the venue id parameter)
+            //in each search, the array items will contain as many elements as the search for venues throws.
+            var items = response.response.groups[0].items
+                //we run a for loop in which we iterate i in the array items (calling the variable of the same name)
+                //the for loop will iterate through the number of elements that array items generates from the search
+            for (var i in items) {
+                //we log the venue id, by calling the iteration generated from the path on the car items
+                //and adding our two last path elements that are contained inside the objects stored in the array items
+                console.log("venueId: " + items[i].venue.id);
 
-            var testVenue = response.response.groups;
-            console.log(testVenue);
+            }
 
-
-            for (var i = 0; i < testVenue.length; i++) {
-
-
-                console.log(testVenue);
-
-                var multLocation = testVenue[i];
-                console.log(multLocation);
-
-                var locationArr = multLocation.items;
-                console.log(locationArr);
-
-
-                for (var i = 0; i < locationArr.length; i++) {
-                    var venueArr = locationArr[i];
-                    console.log(venueArr);
-
-                    var resVenueId = venueArr.venue.id;
-                    console.log(resVenueId);
-                    
-
-                    // var venueArrObject = locationArr[i].venue;
-                    // console.log(venueArr);
+        
+            console.log("unreadCount: " + unreadCount);
+            // console.log("venueId: " + venueId);
 
 
-
-                    // var venueId = venueArr.venue.id;
-                    // console.log(venueId);
+            // var venueId = response[i].response.groups.items.venue.id;
+            // console.log("venue ID: " + venueId);
 
 
 
 
 
-                    // 
+        })
 
-                    // var locationArr = testVenue[i].groups;
-                    // console.log(locationArr);
-
-
-
-                    //this unreadCount gave us the 51 number.. we had an array of notifications and one objects
-                    // item that contained unread Count
-
-                    //.items[0].venue.id;
-                    // for (var i = 0; i < groupArr.length; i++) {
-                    // console.log(groupArr);
-
-
-                    // console.log("unreadCount: " + unreadCount);
-                    // console.log("venueId: " + venueId);
-                    // var venueId = response[i].response.groups.items.venue.id;
-                    // console.log("venue ID: " + venueId);
-
-                };
-
-            };
-        });
 });

@@ -19,3 +19,16 @@ YELP!  NEED TO HAVE OAUTH AND SHA1 !*BEFORE*! JAVASCRIPT
 MAP BOX TOKEN
 pk.eyJ1IjoiZGNhbmxhcyIsImEiOiJjajB5ZnY0d2gwMmd6MzVxZHI3ZWFqYTBlIn0.2xvJpPcNOqFbXTTIuATSsg
 ==================================================================
+
+
+
+FOUR SQUARE VENUE
+
+Token
+PDNKBXL444BMITOCS54NRFEJC35MCGQB5CZROL1EZHTT5JKM
+
+Venues
+https://api.foursquare.com/v2/venues/explore
+
+
+https://api.foursquare.com/v2/venues/explore?ll=40.7,-74&oauth_token=PDNKBXL444BMITOCS54NRFEJC35MCGQB5CZROL1EZHTT5JKM&v=20170401
