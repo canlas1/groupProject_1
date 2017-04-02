@@ -5,76 +5,80 @@ var config = {
 };
 //changed Elsa's id dba to submitForm
 $("#submitForm").on("click", function(event) {
-event.preventDefault();
-var searchTerm = $("#submitForm").val().trim();
-console.log(searchTerm);
-var queryURL = "https://api.foursquare.com/v2/venues/explore?query=" + searchTerm + "&near=New+York&oauth_token=PDNKBXL444BMITOCS54NRFEJC35MCGQB5CZROL1EZHTT5JKM&v=20170401";
-console.log("this is the query URL: " + queryURL);
-$.ajax({
-        url: queryURL,
-        method: "GET"
-    })
-    // After the data comes back from the API
-    .done(function(response) {
-        // Log the Object
-        console.log(response);
+    event.preventDefault();
 
-        var testVenue = response.response.groups;
-        console.log(testVenue);
+    var searchTerm = $("#submitForm").val().trim();
+    console.log(searchTerm);
 
+    var queryURL = "https://api.foursquare.com/v2/venues/explore?query=" + searchTerm + "&near=New+York&oauth_token=PDNKBXL444BMITOCS54NRFEJC35MCGQB5CZROL1EZHTT5JKM&v=20170401";
+    console.log("this is the query URL: " + queryURL);
+    $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+        // After the data comes back from the API
+        .done(function(response) {
+            // Log the Object
+            console.log(response);
 
-        for (var i = 0; i < testVenue.length; i++) {
-
-
+            var testVenue = response.response.groups;
             console.log(testVenue);
 
-            var multLocation = testVenue[i];
-            console.log(multLocation);
 
-            var locationArr = multLocation.items;
-            console.log(locationArr);
+            for (var i = 0; i < testVenue.length; i++) {
 
 
-            var venueArr = locationArr[i].venue;
-            console.log(venueArr);
+                console.log(testVenue);
+
+                var multLocation = testVenue[i];
+                console.log(multLocation);
+
+                var locationArr = multLocation.items;
+                console.log(locationArr);
 
 
+                for (var i = 0; i < locationArr.length; i++) {
+                    var venueArr = locationArr[i];
+                    console.log(venueArr);
 
-            // var venueId = venueArr.venue.id;
-            // console.log(venueId);
+                    var resVenueId = venueArr.venue.id;
+                    console.log(resVenueId);
+                    
 
-
-            // for (var i = 0; i < locationArr.length; i++) {
-
-            // var venueId = locationArr.venue;
-            // console.log(venueId);
-
-
-            // 
-
-            // var locationArr = testVenue[i].groups;
-            // console.log(locationArr);
+                    // var venueArrObject = locationArr[i].venue;
+                    // console.log(venueArr);
 
 
 
-            //this unreadCount gave us the 51 number.. we had an array of notifications and one objects
-            // item that contained unread Count
-
-            //.items[0].venue.id;
-            // for (var i = 0; i < groupArr.length; i++) {
-            // console.log(groupArr);
-
-
-            // console.log("unreadCount: " + unreadCount);
-            // console.log("venueId: " + venueId);
-            // var venueId = response[i].response.groups.items.venue.id;
-            // console.log("venue ID: " + venueId);
+                    // var venueId = venueArr.venue.id;
+                    // console.log(venueId);
 
 
 
-        };
-    });
 
+
+                    // 
+
+                    // var locationArr = testVenue[i].groups;
+                    // console.log(locationArr);
+
+
+
+                    //this unreadCount gave us the 51 number.. we had an array of notifications and one objects
+                    // item that contained unread Count
+
+                    //.items[0].venue.id;
+                    // for (var i = 0; i < groupArr.length; i++) {
+                    // console.log(groupArr);
+
+
+                    // console.log("unreadCount: " + unreadCount);
+                    // console.log("venueId: " + venueId);
+                    // var venueId = response[i].response.groups.items.venue.id;
+                    // console.log("venue ID: " + venueId);
+
+                };
+
+            };
+        });
 });
-
-
