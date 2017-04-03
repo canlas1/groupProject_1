@@ -37,9 +37,14 @@ $("#submitForm").on("click", function(event) {
             for (var i in items) {
                 //we log the venue id, by calling the iteration generated from the path on the car items
                 //and adding our two last path elements that are contained inside the objects stored in the array items
-                console.log("venueId: " + items[i].venue.id);
+                var venueId = items[i].venue.id;
+                console.log("venueId: " + venueId);
+                var venueName = items[i].venue.name;
+                console.log(venueName);
+                var venueAddress = items[i].venue.location.formattedAddress[0];
+                console.log(venueAddress);
 
-            }
+            };
 
         
             console.log("unreadCount: " + unreadCount);
