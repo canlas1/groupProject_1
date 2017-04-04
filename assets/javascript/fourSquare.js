@@ -58,6 +58,9 @@ $("#submitForm").on("click", function(event) {
                 
                 var venuePhone = items[i].venue.contact.phone;
                 console.log("Phone number: ", venuePhone);
+
+                var venueAddress = venueStreet + " " + venueCity + " " + venuePostalCode;
+                console.log(venueAddress);
                 
                 var venueRating = items[i].venue.rating;
                 console.log("Venue Rating: ", venueRating);
