@@ -43,6 +43,8 @@ $("#submitForm").on("click", function(event) {
                 console.log(venueName);
                 var venueAddress = items[i].venue.location.formattedAddress[0];
                 console.log(venueAddress);
+                var statsRating = items[i].venue.stats.rating;
+                console.log(statsRating);
 
             };
 
