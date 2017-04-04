@@ -31,24 +31,33 @@ $("#submitForm").on("click", function(event) {
             //the for loop function and results(items the array that contains the venue parameter)
             //(the venue parameter contains the venue id parameter)
             //in each search, the array items will contain as many elements as the search for venues throws.
-            var items = response.response.groups[0].items
+            var items = response.response.groups[0].items;
                 //we run a for loop in which we iterate i in the array items (calling the variable of the same name)
                 //the for loop will iterate through the number of elements that array items generates from the search
             for (var i in items) {
                 //we log the venue id, by calling the iteration generated from the path on the car items
+                
                 //and adding our two last path elements that are contained inside the objects stored in the array items
                 var venueId = items[i].venue.id;
                 console.log("venueId: " + venueId);
+                
                 var venueName = items[i].venue.name;
                 console.log(venueName);
-                var venueAddress = items[i].venue.location.formattedAddress[0];
+                
+                var venueAddress = items[i].venue.location.formattedAddress;
                 console.log("Formatted Address: ",  venueAddress);
+                
                 var venuePhone = items[i].venue.contact.phone;
                 console.log("Phone number: ", venuePhone);
+                
                 var venueRating = items[i].venue.rating;
                 console.log("Venue Rating: ", venueRating);
                 // var statsRating = items[i].venue.stats.rating;
                 // console.log(statsRating);
+
+                $(".table tbody").append("<tr><td class='address-display'> " + venueAddress);
+
+
 
             };
 
