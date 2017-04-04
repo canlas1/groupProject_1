@@ -44,8 +44,17 @@ $("#submitForm").on("click", function(event) {
                 var venueName = items[i].venue.name;
                 console.log(venueName);
                 
-                var venueAddress = items[i].venue.location.formattedAddress;
-                console.log("Formatted Address: ",  venueAddress);
+                // var venueAddress = items[i].venue.location.formattedAddress;
+                // console.log("Formatted Address: ",  venueAddress);
+
+                var venueStreet = items[i].venue.location.address;
+                console.log("Street: ",  venueStreet);
+                
+                var venueCity = items[i].venue.location.city;
+                console.log("City: ",  venueCity);
+                
+                var venuePostalCode = items[i].venue.location.postalCode;
+                console.log("Zip Code: ",  venuePostalCode);
                 
                 var venuePhone = items[i].venue.contact.phone;
                 console.log("Phone number: ", venuePhone);

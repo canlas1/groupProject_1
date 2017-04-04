@@ -4,17 +4,18 @@ $(document).ready(function() {
 
     //  meta  var queryURL = "https://data.cityofnewyork.us/resource/9w7m-hzhe.json?dba=McDonald's"
     var baseURL = "https://data.cityofnewyork.us/resource/xx67-kt59.json?"
+    //dba is a parameter inside of cityofnewyork API that determines the name of the restaraunt
     var dba;
-
+    //concatinate the queryURL
     var queryURL;
 
-
+    //onSubmit t
     $("#submitForm").on("click", function(event) {
 
         event.preventDefault();
 
         dba = $("#dba-input").val().trim();
-
+        // this query gives us the search for the restaraunt name only based on "dba" parameter
         queryURL = baseURL + "dba=" + dba;
 
         $.ajax({
