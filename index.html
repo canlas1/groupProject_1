@@ -1,41 +1,95 @@
 <!doctype html>
 <html class="no-js" lang="">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Safe Eats</title>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
-    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <meta name="google-site-verification" content="vFortL6sgaJ1I693R2uXUiWD6m1hy1brMU79O4WJa-I" />
+    <title>SafeEats Project</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    
-
-
+    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
 </head>
 
 <body>
-    <div class="jumbotron">
-        <div class="container">
-            <style type="text/css"></style>
-            <form id="movie-form">
-                <label for="dba-input">Add a Restaurant</label>
-                <input type="text" id="dba-input">
-                <br>
-                <!-- Button triggers new movie to be added -->
-                <input id="add-dba" type="submit" value="Search Restaurant">
-            </form>
-
-
-<!-- <script type="text/javascript" src="assets/javascript/oauth.js"></script>
-<script type="text/javascript" src="assets/javascript/sha1.js"></script>
-<script type="text/javascript" src="assets/javascript/js.js"></script> -->
-
-            <script src="assets/javascript/script.js"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="jumbotron">
+                    <h1>Safe Eats!</h1>
+                    <h2>Check Before You Chow</h2>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div id="map">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Type Restaurant</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="restaurant-input">Restaurant Name:</label>
+                                        <input type="text" id="dba-input" class="form-control">
+                                    </div>
+                                    <input id="submitForm" type="submit" class="btn" value="Search Restaurant">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Current Restaraunt Info</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Restaurant Name</th>
+                                    <th>Address</th>
+                                    <th>Type of Food</th>
+                                    <th>Inpection Grade</th>
+                                    <th>Inpection Date</th>
+                                    <th>Violation Comment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="restaurant-name-display"></td>
+                                    <td class="address-display"></td>
+                                    <td class="cusine-type-display"></td>
+                                    <td class="grade-display"></td>
+                                    <td class="inspection-date-display"></td>
+                                    <td class="violation-display"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/javascript/newYorkscript.js"></script>
+    <script src="assets/javascript/fourSquare.js"></script>
+    <!-- <script src="assets/javascript/map.js"></script> -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 
 </html>

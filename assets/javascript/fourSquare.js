@@ -3,9 +3,7 @@ var config = {
     authUrl: 'https://foursquare.com/',
     apiUrl: 'https://api.foursquare.com/'
 };
-
-
-$("#add-dba").on("click", function(event) {
+$("#submitForm").on("click", function(event) {
 
     event.preventDefault();
 
@@ -37,8 +35,8 @@ $("#add-dba").on("click", function(event) {
                 //we run a for loop in which we iterate i in the array items (calling the variable of the same name)
                 //the for loop will iterate through the number of elements that array items generates from the search
             for (var i in items) {
-            	//we log the venue id, by calling the iteration generated from the path on the car items
-            	//and adding our two last path elements that are contained inside the objects stored in the array items
+                //we log the venue id, by calling the iteration generated from the path on the car items
+                //and adding our two last path elements that are contained inside the objects stored in the array items
                 console.log("venueId: " + items[i].venue.id);
 
             }
