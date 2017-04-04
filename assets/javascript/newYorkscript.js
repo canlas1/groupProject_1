@@ -2,7 +2,7 @@ $(document).ready(function() {
     console.log("ready!");
 
 
-    //    var queryURL = "https://data.cityofnewyork.us/resource/9w7m-hzhe.json?dba=McDonald's"
+    //  meta  var queryURL = "https://data.cityofnewyork.us/resource/9w7m-hzhe.json?dba=McDonald's"
     var baseURL = "https://data.cityofnewyork.us/resource/xx67-kt59.json?"
     var dba;
 
@@ -59,6 +59,9 @@ $(document).ready(function() {
 
                     var inspectionDate = response[i].inspection_date;
                     console.log("Inpection_date: ", inspectionDate);
+
+                    var restPhoneNumber = response[i].phone;
+                    console.log(restPhoneNumber);
 
                     // var inspectionType = response[i].inspection_type;
                     // console.log("Inpection_type: ", inspectionType);

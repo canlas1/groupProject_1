@@ -42,9 +42,13 @@ $("#submitForm").on("click", function(event) {
                 var venueName = items[i].venue.name;
                 console.log(venueName);
                 var venueAddress = items[i].venue.location.formattedAddress[0];
-                console.log(venueAddress);
-                var statsRating = items[i].venue.stats.rating;
-                console.log(statsRating);
+                console.log("Formatted Address: ",  venueAddress);
+                var venuePhone = items[i].venue.contact.phone;
+                console.log("Phone number: ", venuePhone);
+                var venueRating = items[i].venue.rating;
+                console.log("Venue Rating: ", venueRating);
+                // var statsRating = items[i].venue.stats.rating;
+                // console.log(statsRating);
 
             };
 
@@ -60,6 +64,6 @@ $("#submitForm").on("click", function(event) {
 
 
 
-        })
+        });
 
 });
