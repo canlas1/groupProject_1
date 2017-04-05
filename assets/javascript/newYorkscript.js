@@ -1,7 +1,7 @@
 $(document).ready(function() {
     console.log("ready!");
 
-
+    //https://data.cityofnewyork.us/resource/xx67-kt59.json
     //  meta  var queryURL = "https://data.cityofnewyork.us/resource/9w7m-hzhe.json?dba=McDonald's"
     var baseURL = "https://data.cityofnewyork.us/resource/xx67-kt59.json?"
     //dba is a parameter inside of cityofnewyork API that determines the name of the restaraunt
@@ -33,7 +33,7 @@ $(document).ready(function() {
                 //log all of the data in the API then parse from here
 
 
-                // For loop set max to 10 objects and index 10 assign attributed
+                // For loop set max to objects and index assign attributed
                 for (var i = 0; i < response.length; i++) {
                     response[i]
 
