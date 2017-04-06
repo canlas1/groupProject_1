@@ -43,6 +43,12 @@ var compareAddress;
             return value;
         }
     }
+    // var maxDate;
+    // function filterMaxDate(value) {
+    //     if(value.inspection_date === maxDate) {
+    //         return value;
+    //     }
+    // }
 
     //onSubmit 
     $("#submitForm").on("click", function(event) {
@@ -75,7 +81,13 @@ var compareAddress;
                     compareAddress = response[i].building + " " + response[i].street + " " + response[i].zipcode + " " + response[i].boro;
 
                     if (completedAddress != compareAddress) {
+                        
                         var newArr = response.filter(matchRestaurantAddress);
+                        // Find the most recent violation date for restaurants at this address
+                        // maxDate=new Date(Math.max.apply(null,newArr));
+                        // // Filter on the most recent violation date
+                        // newArr = newArr.filter(filterMaxDate);
+
                         var restName = response[i].dba;
                         console.log("Restaraunt Name: ", restName);
 
