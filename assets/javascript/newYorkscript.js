@@ -35,12 +35,14 @@ $(document).ready(function() {
         }
     }
 
-var compareAddress;
+    var compareAddress;
+
     function matchRestaurantAddress(value) {
         var completedAddress = value.building + " " + value.street + " " + value.zipcode + " " + value.boro;
 
         if (completedAddress === compareAddress) {
             return value;
+
         }
     }
     // var maxDate;
@@ -81,10 +83,11 @@ var compareAddress;
                     compareAddress = response[i].building + " " + response[i].street + " " + response[i].zipcode + " " + response[i].boro;
 
                     if (completedAddress != compareAddress) {
-                        
+
                         var newArr = response.filter(matchRestaurantAddress);
                         // Find the most recent violation date for restaurants at this address
-                        // maxDate=new Date(Math.max.apply(null,newArr));
+                        //************** NEED TO USE moment() RESEARCH  **************
+                        //maxDate=new Date(Math.max.apply(null,newArr));
                         // // Filter on the most recent violation date
                         // newArr = newArr.filter(filterMaxDate);
 
@@ -124,13 +127,14 @@ var compareAddress;
                         // loop through item
                         //build description based on the items with filter function
                         //grabing all the violation descriptions in the newArr
+                        //append to DOM in table *******WHY Is there no SPACES*******
                         for (var j = 0; j < newArr.length; j++) {
-                            if (newArr[j].violation_description){
+                            if (newArr[j].violation_description) {
 
 
-                            
-                            violationDescription += newArr[j].violation_description + "\n";
-                            console.log("Violation Description: ", violationDescription);
+
+                                violationDescription += newArr[j].violation_description + "\n";
+                                console.log("Violation Description: ", violationDescription);
                             }
 
 
@@ -146,7 +150,8 @@ var compareAddress;
                             "</td><td class='inspection-date-display'>" + inspectionDate +
                             // "</td><td class= 'inspection-type-display'>" +inspectionType +
                             "</td><td class='violation-display'>" + violationDescription);
-                    } //end if
+
+                    }; //end if
                 } // end for
             }); // end done
 
