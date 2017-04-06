@@ -35,6 +35,14 @@ $(document).ready(function() {
         }
     }
 
+var compareAddress;
+    function matchRestaurantAddress(value) {
+        var completedAddress = value.building + " " + value.street + " " + value.zipcode + " " + value.boro;
+
+        if (completedAddress === compareAddress) {
+            return value;
+        }
+    }
 
     //onSubmit 
     $("#submitForm").on("click", function(event) {
@@ -59,68 +67,76 @@ $(document).ready(function() {
                 console.log(response);
                 //log all of the data in the API then parse from here
 
-
+                var completedAddress;
                 // For loop set max to objects and index assign attributed
                 for (var i = 0; i < response.length; i++) {
-                    response[i]
+                    // response[i]
+
+                    compareAddress = response[i].building + " " + response[i].street + " " + response[i].zipcode + " " + response[i].boro;
+
+                    if (completedAddress != compareAddress) {
+                        var newArr = response.filter(matchRestaurantAddress);
+                        var restName = response[i].dba;
+                        console.log("Restaraunt Name: ", restName);
+
+                        var building = response[i].building;
+                        console.log("Address number: ", building);
+
+                        var street = response[i].street;
+                        console.log("Street Name: ", street)
+
+                        var zipcode = response[i].zipcode;
+                        console.log("Zipcode: ", zipcode);
+
+                        var boro = response[i].boro;
+                        console.log("City Boro: ", boro);
+
+                        var cuisineDescription = response[i].cuisine_description;
+                        console.log("Type of Food: ", cuisineDescription);
+
+                        var grade = response[i].grade;
+                        console.log("Grade: ", grade);
+
+                        var inspectionDate = response[i].inspection_date;
+                        console.log("Inpection_date: ", inspectionDate);
+
+                        var restPhoneNumber = response[i].phone;
+                        console.log(restPhoneNumber);
+
+                        // var completedAddress = building + " " + street + " " + zipcode + " " + boro;
+                        console.log("Completed Address: ", completedAddress);
+
+                        var violationDescription = "";
+
+                        //first filter that has an address is the newArr
+                        // loop through item
+                        //build description based on the items with filter function
+                        //grabing all the violation descriptions in the newArr
+                        for (var j = 0; j < newArr.length; j++) {
+                            if (newArr[j].violation_description){
 
 
+                            
+                            violationDescription += newArr[j].violation_description + "\n";
+                            console.log("Violation Description: ", violationDescription);
+                            }
 
 
-                    var restName = response[i].dba;
-                    console.log("Restaraunt Name: ", restName);
+                            //****Call this function giving me a infinate loop*****// 
+                            //apiResults.push(completedAddress);
+                        }
+                        completedAddress = compareAddress;
 
-                    var building = response[i].building;
-                    console.log("Address number: ", building);
+                        $(".table tbody").append("<tr><td class='restaurant-name-display'> " + restName +
+                            "</td><td class='address-display'>" + completedAddress +
+                            "</td><td class='cusine-type-display'>" + cuisineDescription +
+                            "</td><td class='grade-display'>" + grade +
+                            "</td><td class='inspection-date-display'>" + inspectionDate +
+                            // "</td><td class= 'inspection-type-display'>" +inspectionType +
+                            "</td><td class='violation-display'>" + violationDescription);
+                    } //end if
+                } // end for
+            }); // end done
 
-                    var street = response[i].street;
-                    console.log("Street Name: ", street)
-
-                    var zipcode = response[i].zipcode;
-                    console.log("Zipcode: ", zipcode);
-
-                    var boro = response[i].boro;
-                    console.log("City Boro: ", boro);
-
-                    var cuisineDescription = response[i].cuisine_description;
-                    console.log("Type of Food: ", cuisineDescription);
-
-                    var grade = response[i].grade;
-                    console.log("Grade: ", grade);
-
-                    var inspectionDate = response[i].inspection_date;
-                    console.log("Inpection_date: ", inspectionDate);
-
-                    var restPhoneNumber = response[i].phone;
-                    console.log(restPhoneNumber);
-
-                    var completedAddress = building + " " + street + " " + zipcode + " " + boro;
-                    console.log("Completed Address: ", completedAddress);
-
-
-                   
-
-
-                    var violationDescription = response[i].violation_description;
-                    console.log("Violation Description: ", violationDescription);
-
-
-                    //****Call this function giving me a infinate loop*****// 
-                    //apiResults.push(completedAddress);
-
-
-                    $(".table tbody").append("<tr><td class='restaurant-name-display'> " + restName +
-                        "</td><td class='address-display'>" + completedAddress +
-                        "</td><td class='cusine-type-display'>" + cuisineDescription +
-                        "</td><td class='grade-display'>" + grade +
-                        "</td><td class='inspection-date-display'>" + inspectionDate +
-                        // "</td><td class= 'inspection-type-display'>" +inspectionType +
-                        "</td><td class='violation-display'>" + violationDescription);
-
-
-                };
-
-
-            });
-    });
+    }); //end on click
 }); //!!!!!!!!!!!!!!!!!!!!END OF!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! $(document).ready(function()
