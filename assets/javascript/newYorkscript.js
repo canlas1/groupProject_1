@@ -110,7 +110,7 @@ $(document).ready(function() {
                         }
                     };
 
-
+                    console.log("This is the new object: ", dataStructure);
 
                     Object.keys(dataStructure).forEach(function(key) {
                         var objectAddress = (key, dataStructure[completedAddress])
@@ -118,71 +118,27 @@ $(document).ready(function() {
                         var newName = (key, objectAddress.name);
                         console.log("New printed Name: ", newName);
 
-                        Object.keys(objectAddress).forEach(function(key){
+                        Object.keys(objectAddress).forEach(function(key) {
                             var objectInspection = (key, objectAddress[inspectionDate])
                             console.log("This is the Object Inspection Time: ", objectInspection);
                             var newGrade = (key, objectInspection.grade);
                             console.log("This is the printed grade: ", newGrade);
-                        })
-                        // var newGrade = (key, objectAddress.inspectionDate);
-                        // console.log("This is the printed grade: ", newGrade);
+                            var newCommentsArr = (key, objectInspection.comments);
+
+                            for (var i = 0; i < newCommentsArr.length; i++) {
+                                console.log("This is the Violations Array: ", newCommentsArr[i]);
+
+                            }
+                               
 
 
-                        Object.keys(objectAddress).forEach(function(key) {
-                            var newName = (key, objectAddress.name);
-                            console.log("The new Name is: ", newName);
-
-
-
-                            // Object.keys(newName).forEach(function(key) {
-                            //     var objectDate = (key, objectAddress[inspectionDate])
-                            //     console.log("This is the Date object: ", objectDate);
+                            });
 
                         });
 
-                        console.log(key);
-                        console.log(objectAddress);
-                        // console.log(key, dataStructure[completedAddress].name);
-                        // console.log(key, dataStructure[completedAddress][inspectionDate].grade);
-                        // console.log(key, dataStructure[completedAddress][inspectionDate].comments);
-
-                    });
-
- 
+                    };
 
 
-                    // for (var key in validation_messages) {
-                    //     // skip loop if the property is from prototype
-                    //     if (!validation_messages.hasOwnProperty(key)) continue;
-
-                    //     var obj = validation_messages[key];
-                    //     for (var prop in obj) {
-                    //         // skip loop if the property is from prototype
-                    //         if (!obj.hasOwnProperty(prop)) continue;
-
-                    //         // your code
-                    //         alert(prop + " = " + obj[prop]);
-                    //     }
-
-
-                    // for (var k in completedAddress) {
-                    //     var newName = loopAddress.name
-                    //     console.log("This is the Looped Name: ",  newName);
-                    //     var newAddress = loopAddress.completedAddress
-                    //     console.log("This is the Looped Address: ", completedAddress);
-                    //     var newGrade = loopAddress.grade;
-                    //     console.log("This is the Looped Grade: ", grade);
-                    //     var newComments = violationDescription;
-                    //     console.log("Violations:", newComments);
-
-
-                    // var loopInspection = dataStructure[completedAddress][inspectionDate];
-                    // //var loopGrade = dataStructure[completedAddress].grade;
-                    // //var loopViolation = dataStructure[completedAddress].comments[i];
-                    // console.log(loopAddress);
-                    // console.log(loopInspection);
-                    //console.log(loopGrade);
-                    //console.logy(loopViolation);
 
                     // $(".table tbody").append("<tr><td class='restaurant-name-display'> " + restName +
                     //     "</td><td class='address-display'>" + completedAddress +
@@ -191,17 +147,17 @@ $(document).ready(function() {
                     //     "</td><td class='inspection-date-display'>" + inspectionDate +
                     //     // "</td><td class= 'inspection-type-display'>" +inspectionType +
                     //     "</td><td class='violation-display'>" + violationDescription);
-                } // end for
-                console.log(dataStructure)
+                }); // end for
+
 
                 for (var item in dataStructure) {
 
                     console.log(item);
 
-                }
-            }); //end on
-    }); // end done
-}); //end on click
+                };
+            }); //end done
+    }); // end on
+ //end doc
 
 
 // var obj = {
