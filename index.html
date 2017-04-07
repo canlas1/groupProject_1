@@ -2,24 +2,36 @@
 <html class="no-js" lang="">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Untitled Document</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Untitled Document</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <!-- Place favicon.ico in the root directory -->
-  
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
 
-  <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js"></script>
-  <script src="js/main.js"></script>
-  <script>
-    <!-- JS on the page -->
-  </script>
+    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+            <div class="front">
+                <!-- front content -->
+            </div>
+            <div class="back">
+                <!-- back content -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+        <!-- JS on the page -->
+    </script>
 </body>
+
 </html>
