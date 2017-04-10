@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 </head>
 
 <body>
@@ -34,7 +35,6 @@
                     <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
                 </div>
                 <div class="row center">
-                    <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
                 </div>
                 <br>
                 <br>
@@ -44,66 +44,52 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col m12">
+            <form class="col s12">
                 <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">textsms</i>
-                       
-                        <form>
-                          
-
-                            <label for="restaurant-input">Restaurant Name:</label>
-                            <input type="text" id="dba-input" class="form-control">
-                            
-                            <label for="building-number-input">Enter Building Number:</label>
-                            <input type="text" id="buildingNumber" class="form-control">
-
-                            <label for="street-name-input">Enter Street Name:</label>
-                            <input type="text" id="streetName" class="form-control">
-
-
-
-                            <label for="zipcode-input">Enter ZipCode:</label>
-                            <input type="text" id="zipcodeInput" class="form-control">
-                
-
-
-
-
-
-                            <a id="submitForm" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">search</i></a>
-                        </form>
-
-
-                        <!--  <label for="autocomplete-input">Restaurant Name:</label> -->
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">search</i>
+                        <input type="text" id="dba-input" class="validate">
+                        <label for="icon_search">Restaraunt Name</label>
                     </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">search</i>
+                        <input id="area-input" type="text" class="validate">
+                        <label for="icon_search">Area Input</label>
+                    </div>
+                    <button id="submitForm" class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
                 </div>
-            </div>
+            </form>
         </div>
-        <div class="col m6">
-            <table class="bordered highlight centered responsive-table">
-                <thead>
-                    <tr>
-                        <th>Restaurant Name</th>
-                        <th>Address</th>
-                        <th>Type of Food</th>
-                        <th>Inpection Grade</th>
-                        <th>Inpection Date</th>
-                        <th>Violation Comment</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td id="restaurant-name-display"></td>
-                        <td id="address-display"></td>
-                        <td id="cusine-type-display"></td>
-                        <td id="grade-display"></td>
-                        <td id="inspection-date-display"></td>
-                        <td id="violation-display"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="col m6">
+        <table class="bordered highlight centered responsive-table">
+            <thead>
+                <tr>
+                    <th>Restaurant Name</th>
+                    <th>Address</th>
+                    <th>Type of Food</th>
+                    <th>Inpection Grade</th>
+                    <th>Inpection Date</th>
+                    <th>Violation Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="restaurant-name-display"></td>
+                    <td id="address-display"></td>
+                    <td id="cusine-type-display"></td>
+                    <td id="grade-display"></td>
+                    <td id="inspection-date-display"></td>
+                    <td id="violation-display"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     </div>
     <div class="parallax-container valign-wrapper">
         <div class="section no-pad-bot">
@@ -170,9 +156,12 @@
         </div>
     </footer>
     <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+  
+    <script src="js/googlePlaces.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
+ 
 </body>
 
 </html>
