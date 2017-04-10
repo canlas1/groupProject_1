@@ -26,7 +26,7 @@ $("#dba-input").easyAutocomplete(options);
         
         building = $("#buildingNumber").val().trim();
 
-        street = $("#streetName").val().trim();
+        // street = $("#streetName").val().trim();
 
         zipcode =  $("#zipcodeInput").val().trim();
 
