@@ -29,7 +29,14 @@ th{
 nav ul a,
 nav .brand-logo {
   color: #444;
+<<<<<<< HEAD
   height: 120px;
+=======
+/*  height: 120px;*/
+    margin-top: 10px;
+    height: 200px;
+    width: 200px;
+>>>>>>> dennis_branch
 }
 .white{
  height: 120px;
@@ -43,6 +50,24 @@ display: none;
 .searchres{
 display: none;
 
+<<<<<<< HEAD
+=======
+}
+
+#index-banner{
+  margin-top: 0px;
+}
+
+.navName{
+  color: black;
+}
+
+.headingsh5{
+/*
+  background-color: rgba(128,0,0,0.3);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.50);
+*/
+>>>>>>> dennis_branch
 }
 
 
@@ -67,9 +92,18 @@ h1{
 
 .brand-logo {
     width: 150px;
+<<<<<<< HEAD
     height: auto;
     background-color: rgba(255,255,255,0.8)
    
+=======
+    height: 300px;
+    padding-bottom: 50px;
+/*    background-color: rgba(255,255,255,0.8);*/
+    background-image: url(../img/safe_eats_logo.png);
+    background-size: cover;
+    background-position: center;
+>>>>>>> dennis_branch
 }
 
 p {
@@ -115,4 +149,8 @@ p {
 
 footer.page-footer {
   margin: 0;
+}
+
+h1{
+  padding-top: 60px;
 }
