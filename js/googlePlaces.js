@@ -197,10 +197,19 @@ console.log(this);
                 if (grade == undefined) {
                     grade = "Information Unavailable";
                 }
-                // for (key in violationDescription) {
+                // Create a variable to remove T from inspectionDate string
+                var startOfT = inspectionDate.lastIndexOf("T");
+                console.log(startOfT);
 
+                inspectionDate = inspectionDate.slice(0, startOfT);
+                console.log(inspectionDate);
 
-                // }
+                // inspectionDate = inspectionDate.replace(/-/g, " ");
+                // console.log(inspectionDate)
+               
+                // inspectionDate = moment().format(inspectionDate);
+
+                
 
                 //  full list of items to the well and adding it appending to the DOM via JQuery
                 $(".tableresponse tbody").append("<tr><td class='restaurant-name-display'> " + restName +
