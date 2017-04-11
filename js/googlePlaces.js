@@ -213,7 +213,7 @@ console.log(this);
 
                 //  full list of items to the well and adding it appending to the DOM via JQuery
                 $(".tableresponse tbody").append("<tr><td class='restaurant-name-display'> " + restName +
-                    "</td><td class='address-display-res'>" + (building + " " + street + zipcode + " " + boro) +
+                    "</td><td class='address-display-res'>" + (building + " " + street +  " " + boro+ " "+ zipcode) +
                     "</td><td class='cusine-type-display-res'>" + cuisineDescription +
                     "</td><td class='grade-display-res'>" + grade +
                     "</td><td class='inspection-date-display-res'>" + inspectionDate +
